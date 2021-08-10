@@ -1,0 +1,74 @@
+:host ::ng-deep {
+  .table-resize-overlay {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  .table-view-selector {
+    user-select: none;
+    cursor: col-resize;
+
+    .ant-table-thead th.ant-table-column-has-sorters {
+      user-select: none;
+      cursor: col-resize;
+    }
+  }
+
+  .table-resize-bar {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    cursor: col-resize;
+    border-right: 1px dashed #adb0b8;
+    z-index: 9999;
+    display: none;
+  }
+
+  .table-hover-bg {
+    background: #F2F2F3;
+    pointer-events: none;
+
+    &+th {
+      pointer-events: none;
+    }
+  }
+
+  .resize-handle {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    cursor: col-resize;
+
+    &:hover {
+      border-right: 1px dashed #adb0b8;
+    }
+  }
+
+  .ant-table-thead>tr:first-child>th:last-child {
+
+    .resize-handle {
+      display: none;
+    }
+  }
+
+  .table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .ant-table tfoot>tr>td,
+  .ant-table tfoot>tr>th,
+  .ant-table-tbody>tr>td,
+  .ant-table-thead>tr>th {
+    padding: 10px;
+  }
+}

@@ -1,0 +1,27 @@
+<div class="table-container" #tableView>
+  <div class="table-wrap">
+    <nz-table #rowSelectionTable nzShowSizeChanger [nzData]="listOfData" nzTableLayout="fixed">
+      <thead>
+        <tr>
+          <th
+            *ngFor="let c of columns"
+            [nzWidth]="c.width"
+            thResize
+            [tableViewRefElement]="tableViewRefElement"
+            (resizeEndEvent)="onResize($event)"
+            (resizeStartEvent)="onBeginResize($event)"
+            (resizingEvent)="onResizing($event, c)">
+              {{c.name}}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of rowSelectionTable.data">
+          <td>{{ data.name }}</td>
+          <td>{{ data.age }}</td>
+          <td>{{ data.address }}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>
